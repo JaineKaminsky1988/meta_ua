@@ -67,13 +67,27 @@ header {
   
   .lang {
     padding-bottom: 5px;
-    
+    position: relative;
+    margin-left: 20px;
+  
     select {
       background-color: $blackColor;
       color: $whiteColor;
       @include font($weight, 12, 12);
       border: none;
       outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 37px;
+    
+    }
+  
+    .arrow_bottom {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 }

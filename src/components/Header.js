@@ -77,6 +77,12 @@ class Header extends Component {
                 </a>
                 <div className="lang">
                     <SelectLang />
+                    <Icons
+	                    id="arrow_bottom"
+	                    width="8"
+	                    height="5"
+	                    color="#fff"
+                    />
                 </div>
             </div>
         </header>
