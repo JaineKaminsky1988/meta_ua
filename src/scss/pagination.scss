@@ -1,0 +1,46 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  
+  .prev {
+    margin-right: 18px;
+    height: 24px;
+  }
+  
+  .pages {
+    display: flex;
+    align-items: center;
+    
+    button {
+      min-width: 24px;
+      height: 24px;
+      border: none;
+      background: transparent;
+      padding-left: 6px;
+      padding-right: 6px;
+      color: $subTxtColor;
+      @include font($weight, 16, 16);
+      
+      &.active {
+        background-color: $accentColor;
+        color: $whiteColor;
+        border-radius: 5px;
+      }
+    }
+    
+    > div {
+      display: flex;
+      padding-left: 6px;
+      padding-right: 6px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+  
+  .next {
+    margin-left: 18px;
+    height: 24px;
+  }
+}

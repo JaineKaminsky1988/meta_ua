@@ -1,0 +1,142 @@
+.events_block {
+  padding-top: 15px;
+  
+  .slick-prev,
+  .slick-next {
+    width: 8px;
+    height: 11px;
+    
+    &::before {
+      display: none;
+    }
+  }
+  
+  .slick-prev {
+    left: 7px;
+  }
+  
+  .slick-next {
+    right: 7px;
+  }
+  
+  .slick-list {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+  }
+}
+
+
+.event {
+  display: flex;
+  
+  &.live {
+    .right {
+      background-color: #f87007;
+      
+      .period {
+        color: $whiteColor;
+        text-transform: uppercase;
+      }
+      
+      .count {
+        .countValue,
+        .subCountValue {
+          color: $whiteColor;
+        }
+      }
+    }
+  }
+  
+  .left {
+    width: 135px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #f4f5f6;
+    border-right: none;
+    box-sizing: border-box;
+    border-radius: 5px 0 0 5px;
+    
+    .date {
+      @include font($weight, 10, 10);
+      color: $subTxtColor;
+      padding-left: 10px;
+    }
+    
+    .teams {
+      padding-left: 10px;
+      
+      .team {
+        display: flex;
+        align-items: center;
+        height: 22px;
+        
+        .emblem {
+          height: 18px;
+        }
+        
+        .name {
+          white-space: nowrap;
+          overflow: hidden;
+          padding-right: 8px;
+          padding-left: 8px;
+          text-overflow: ellipsis;
+          
+          @include font($weight, 14, 14);
+        }
+      }
+    }
+  }
+  
+  .right {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-width: 35px;
+    background-color: #f4f5f6;
+    border-radius: 0 5px 5px 0;
+    text-align: center;
+    
+    .period {
+      @include font($weight, 10, 10);
+      color: $subTxtColor;
+      height: 13px;
+    }
+    
+    .count {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      
+      span {
+        width: 100%;
+      }
+      
+      .countValue {
+        @include font($weight, 18, 18);
+      }
+      
+      .subCountValue {
+        margin-left: 2px;
+        @include font($weight, 14, 14);
+        color: $subTxtColor;
+        padding-top: 1px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .event {
+    padding-left: 10px;
+    padding-right: 10px;
+    
+    .left {
+      width: calc(100% - 35px);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .events_block {
+    //display: none;
+  }
+}

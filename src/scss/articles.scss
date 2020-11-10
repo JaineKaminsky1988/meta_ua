@@ -1,0 +1,143 @@
+.articles {
+  padding-top: 15px;
+  
+  .date_stream {
+    @include font($weight, 12, 12);
+    color: $subTxtColor;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 33px;
+    background-color: #fcfcfc;
+    border: 1px solid #f4f5f6;
+    border-radius: 5px;
+  }
+  
+  .news {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid #f4f5f6;
+    border-radius: 5px;
+    
+    > img {
+    }
+    
+    .news_content {
+      padding-left: 15px;
+      padding-right: 15px;
+      
+      .news_source {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        @include font($weight, 11, 12);
+        
+        .liga {
+          color: $accentColor2;
+        }
+        
+        .date {
+          margin-right: 10px;
+          color: $subTxtColor;
+          
+          span + span {
+            margin-left: 5px;
+          }
+        }
+      }
+      
+      .news_head {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        @include font(500, 14, 16);
+        
+        .comment {
+          display: inline-flex;
+          align-items: center;
+          padding-left: 10px;
+          @include font($weight, 12, 12);
+          
+          span {
+            margin-left: 5px;
+          }
+        }
+      }
+      
+      .news_description {
+        @include font($weight, 12, 12);
+      }
+    }
+  }
+  
+  .more {
+    display: none;
+    border: 1px solid #f4f5f6;
+    text-align: center;
+    @include font(500, 14, 14);
+    color: $accentColor;
+    line-height: 41px;
+    margin-top: 15px;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .articles {
+    padding-top: 0;
+    
+    .news {
+      position: relative;
+      padding: 10px 10px 15px;
+      max-height: 100px;
+      border-radius: 0;
+      
+      img {
+        width: 90px;
+        position: absolute;
+        top: 35px;
+        left: 10px;
+      }
+      
+      .news_content {
+        position: relative;
+        padding-left: 0;
+        
+        .news_head {
+          padding-left: 100px;
+          padding-bottom: 0;
+          padding-top: 8px;
+          
+          span:not(.comment) {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 19px;
+          }
+          
+          .comment {
+            position: absolute;
+            top: -4px;
+            right: 0;
+          }
+        }
+        
+        .news_description {
+          display: none;
+        }
+      }
+    }
+    
+    .more,
+    .date_stream {
+      width: calc(100% - 20px);
+      margin: 15px auto;
+    }
+    
+    .more {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import "mixins.scss";
+@import "header.scss";
+@import "breadcrumbs.scss";
+@import "slick.scss";
+@import "slick-theme.scss";
+@import "events_slider.scss";
+@import "bigSlider.scss";
+@import "articles.scss";
+@import "side.scss";
+@import "pagination.scss";
+
+.wrapper {
+  .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    
+    .container {
+      width: 100%;
+      padding: 0 20px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      
+      .main {
+        padding-right: 20px;
+        width: 100%;
+        max-width: 740px;
+        margin: 0 auto;
+        padding-top: 20px;
+      }
+      
+    }
+  }
+}
+
+@media screen and (max-width: 1100px){
+  .wrapper .inner .container .main{
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 590px){
+  .wrapper .inner .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+

@@ -1,0 +1,157 @@
+.bigSlider_block {
+  .slick-slider {
+    width: 100% !important;
+  }
+  
+  .slick-prev,
+  .slick-next {
+    z-index: 1;
+    height: 100%;
+    top: 0;
+    transform: translate(0, 0);
+    width: 48px;
+    
+    &::before {
+      display: none;
+    }
+    
+    svg {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  
+  .slick-prev {
+    left: 0;
+    
+    svg {
+      left: 20px;
+    }
+  }
+  
+  .slick-next {
+    right: 0;
+    
+    svg {
+      right: 20px;
+    }
+  }
+  
+  .slick-dots {
+    bottom: 4px;
+    height: 35px;
+    
+    li {
+      width: auto;
+      height: auto;
+      
+      &.slick-active {
+        button {
+          background-color: $accentColor;
+        }
+      }
+      
+      button {
+        width: 50px;
+        height: 3px;
+        padding: 0;
+        background: rgba(#fff, 0.3);
+        border-radius: 5px;
+      }
+    }
+  }
+  
+  .news {
+    position: relative;
+    
+    > img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .news_content {
+      position: absolute;
+      bottom: 35px;
+      width: 100%;
+      left: 0;
+      right: 0;
+      padding-left: 30px;
+      padding-right: 30px;
+      color: $whiteColor;
+      box-sizing: border-box;
+      
+      .news_source {
+        display: flex;
+        align-items: baseline;
+        
+        .liga {
+          color: $accentColor;
+          @include font($weight, 12, 14);
+          margin-right: 15px;
+        }
+        
+        .date {
+          @include font($weight, 12, 12);
+          
+          span {
+            + span {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+      
+      .news_head {
+        @include font(500, 20, 16);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+        .comment {
+          display: none;
+        }
+      }
+      
+      .news_description {
+        @include font($weight, 14, 14);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bigSlider_block .news .news_content {
+    .news_head .comment {
+      width: 41px;
+      height: 17px;
+      margin-left: 10px;
+      background-color: $subTxtColor;
+      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      @include font($weight, 12, 12);
+      
+      span {
+        margin-left: 2px;
+      }
+    }
+    
+    .news_description {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .bigSlider_block {
+    .news .news_content {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    
+    .slick-dots li button {
+      width: 30px;
+    }
+  }
+}

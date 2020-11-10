@@ -1,0 +1,110 @@
+.side {
+  width: 100%;
+  max-width: 300px;
+  padding-top: 20px;
+  margin: 0 auto;
+  
+  > div {
+    border-radius: 5px;
+    background-color: #313438;
+  }
+  
+  h2 {
+    color: $whiteColor;
+    @include font(500, 20, 20);
+    padding-left: 10px;
+    margin: 0;
+    padding-top: 15px;
+  }
+  
+  .footbal_news {
+    .news {
+      padding-top: 10px;
+      
+      &:not(.news_image) {
+        position: relative;
+        padding-bottom: 10px;
+        
+        &:not(:last-child) {
+          &::after {
+            content: "";
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            bottom: 0;
+            height: 1px;
+            display: block;
+            background-color: rgba(244, 245, 246, 0.15);
+          }
+        }
+      }
+      
+      &.news_image {
+        position: relative;
+        
+        .news_content {
+          position: absolute;
+          bottom: 10px;
+          left: 0;
+          right: 0;
+        }
+      }
+      
+      .news_content {
+        padding-left: 10px;
+        padding-right: 10px;
+        
+        .news_source {
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: flex-end;
+          @include font($weight, 12, 12);
+          color: $subTxtColor;
+          
+          .liga {
+            margin-left: 10px;
+          }
+          
+          .date {
+            span {
+            }
+          }
+        }
+        
+        .news_head {
+          padding-top: 5px;
+          @include font(500, 14, 14);
+          color: $whiteColor;
+          line-height: 19px;
+          
+          .comment {
+            margin-left: 10px;
+            display: inline-flex;
+            align-items: center;
+            
+            .comment_count {
+              margin-left: 5px;
+              @include font($weight, 12, 12);
+              color: $subTxtColor;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .all_news {
+    text-align: center;
+    border-top: 1px solid rgba(244, 245, 246, 0.15);
+    
+    a {
+      color: $accentColor;
+      text-decoration: none;
+      @include font(500, 12, 12);
+      line-height: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+}
