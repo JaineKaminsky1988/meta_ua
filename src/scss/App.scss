@@ -8,6 +8,9 @@
 @import "articles.scss";
 @import "side.scss";
 @import "pagination.scss";
+body {
+  min-width: 320px;
+}
 
 .wrapper {
   .inner {

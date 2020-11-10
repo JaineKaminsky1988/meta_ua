@@ -103,10 +103,10 @@
       }
       
       .news_head {
-        @include font(500, 20, 16);
+        @include font(500, 16, 20);
         padding-top: 10px;
         padding-bottom: 10px;
-        
+  
         .comment {
           display: none;
         }
